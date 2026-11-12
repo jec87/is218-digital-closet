@@ -2,259 +2,310 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Digital Closet | Development Research</title>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Digital Closet | Development Research</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap');
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #faf7f4;
-      color: #333;
-      margin: 0;
-      line-height: 1.7;
-    }
+:root {
+  --cream: #faf7f2;
+  --beige: #e9dfd2;
+  --brown: #70594b;
+  --dark: #302b27;
+}
 
-    header {
-      background: #e8d9d0;
-      text-align: center;
-      padding: 60px 20px;
-    }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
-    h1 {
-      font-size: 38px;
-      margin-bottom: 5px;
-    }
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--dark);
+  font-family: 'DM Sans', Arial, sans-serif;
+  line-height: 1.8;
+}
 
-    h2 {
-      color: #795b50;
-    }
+header {
+  background: linear-gradient(135deg, #e9dfd2, #f8f3ec, #e6d6c6);
+  text-align: center;
+  padding: 95px 20px;
+  border-bottom: 1px solid #ded2c5;
+}
 
-    h3 {
-      color: #94766a;
-    }
+h1, h2, h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 500;
+}
 
-    main {
-      max-width: 900px;
-      margin: auto;
-      padding: 30px 20px;
-    }
+h1 {
+  font-size: clamp(42px, 7vw, 76px);
+  letter-spacing: -2px;
+  line-height: 1.15;
+  margin: 0 0 20px;
+}
 
-    section {
-      background: white;
-      padding: 30px;
-      margin-bottom: 22px;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-    }
+h2 {
+  font-size: 30px;
+  color: var(--brown);
+  margin-top: 0;
+}
 
-    a {
-      color: #795b50;
-    }
+h3 {
+  font-size: 21px;
+  color: var(--brown);
+}
 
-    a:hover {
-      text-decoration: underline;
-    }
+header p { color: #715e50; }
 
-    .tag {
-      display: inline-block;
-      background: #f1e5df;
-      padding: 5px 12px;
-      border-radius: 20px;
-      margin: 5px;
-      font-size: 14px;
-    }
+main {
+  max-width: 1000px;
+  margin: auto;
+  padding: 50px 20px;
+}
 
-    footer {
-      text-align: center;
-      padding: 30px;
-      color: #777;
-    }
-  </style>
+section {
+  background: white;
+  padding: 40px;
+  margin-bottom: 25px;
+  border: 1px solid #eee7df;
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(80,60,40,0.04);
+}
+
+section:nth-child(even) {
+  background: #f3ede5;
+}
+
+a {
+  color: #795b50;
+  font-weight: 600;
+  text-underline-offset: 4px;
+}
+
+a:hover { color: #3d2d24; }
+
+.tag {
+  display: inline-block;
+  background: #e8dcd0;
+  color: #594537;
+  padding: 7px 16px;
+  border-radius: 30px;
+  margin: 5px;
+  font-size: 13px;
+}
+
+li { margin-bottom: 10px; }
+
+pre {
+  background: #eee5db;
+  padding: 20px;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+.outfit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.outfit-card {
+  background: #faf7f2;
+  border: 1px solid #e4d9cd;
+  border-radius: 10px;
+  padding: 25px 10px;
+  text-align: center;
+}
+
+.outfit-card .emoji {
+  font-size: 42px;
+}
+
+footer {
+  text-align: center;
+  background: #e9dfd2;
+  padding: 35px;
+  color: #665448;
+}
+
+@media (max-width: 600px) {
+  header { padding: 60px 18px; }
+  main { padding: 25px 14px; }
+  section { padding: 25px 20px; }
+  h2 { font-size: 25px; }
+  .outfit-grid { grid-template-columns: 1fr; }
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <h1>My Digital Closet</h1>
-    <p>Development Research & Project Planning</p>
-    <p>IS218-003 | Review 1 | November 12, 2026</p>
-  </header>
+<header>
+  <h1>My Digital Closet</h1>
+  <p>Development Research & Project Planning</p>
+  <p>IS218-003 | Review 1 | November 12, 2026</p>
+</header>
 
-  <main>
+<main>
 
-    <section>
-      <h2>About My Project</h2>
-      <p>
-        My Digital Closet is a web application that
-        helps college students and young adults
-        organize their clothing, create outfits,
-        and save their favorite combinations.
-      </p>
-      <p>
-        I chose this project because I wanted to
-        combine my interest in design with programming.
-        I also wanted to create something useful
-        for everyday life.
-      </p>
-    </section>
+<section>
+  <h2>About My Project</h2>
+  <p>
+    My Digital Closet is a web application that helps
+    college students and young adults organize their
+    clothing, create outfits, and save their favorite
+    combinations.
+  </p>
+  <p>
+    I chose this project because I wanted to combine
+    my interest in design with programming and create
+    something useful for everyday life.
+  </p>
+</section>
 
-    <section>
-      <h2>Research Question</h2>
-      <p>
-        How can I build a secure, simple, and
-        visually appealing digital wardrobe
-        application using Python?
-      </p>
+<section>
+  <h2>Research Question</h2>
+  <p>
+    How can I build a secure, simple, and visually
+    appealing digital wardrobe application using Python?
+  </p>
 
-      <h3>Target Audience</h3>
-      <p>
-        College students and young adults who want
-        to organize their clothes and make choosing
-        outfits easier.
-      </p>
-    </section>
+  <h3>Target Audience</h3>
+  <p>
+    College students and young adults who want to
+    organize their clothes and make choosing outfits easier.
+  </p>
+</section>
 
-    <section>
-      <h2>Comparing Two Project Ideas</h2>
+<section>
+  <h2>Comparing Two Project Ideas</h2>
 
-      <h3>Option 1: Digital Closet</h3>
-      <p>
-        Users create accounts, add clothing items,
-        combine items into outfits, and save outfits
-        for later.
-      </p>
+  <h3>Option 1: Digital Closet</h3>
+  <p>
+    Users create accounts, add clothing items,
+    combine them into outfits, and save outfits for later.
+  </p>
 
-      <h3>Option 2: Habit Tracker</h3>
-      <p>
-        Users create accounts, record daily habits,
-        track their progress, and review their history.
-      </p>
+  <h3>Option 2: Habit Tracker</h3>
+  <p>
+    Users create accounts, record daily habits,
+    track their progress, and review their history.
+  </p>
 
-      <h3>My Decision</h3>
-      <p>
-        I chose Digital Closet because it offers
-        more opportunities for creative interface
-        design while still allowing me to practice
-        databases, authentication, and testing.
-      </p>
-    </section>
+  <h3>My Decision</h3>
+  <p>
+    I chose Digital Closet because it offers more
+    opportunities for creative interface design while
+    allowing me to practice databases, authentication,
+    and testing.
+  </p>
+</section>
 
-    <section>
-      <h2>Technology Stack</h2>
+<section>
+  <h2>Technology Stack</h2>
 
-      <span class="tag">Python</span>
-      <span class="tag">Flask</span>
-      <span class="tag">SQLite</span>
-      <span class="tag">HTML</span>
-      <span class="tag">CSS</span>
-      <span class="tag">pytest</span>
+  <span class="tag">Python</span>
+  <span class="tag">Flask</span>
+  <span class="tag">SQLite</span>
+  <span class="tag">HTML</span>
+  <span class="tag">CSS</span>
+  <span class="tag">pytest</span>
 
-      <h3>Python and Flask</h3>
-      <p>
-        Flask is a Python web framework that
-        supports routes, templates, and requests.
-        I plan to use Flask for the backend.
-      </p>
+  <h3>Python and Flask</h3>
+  <p>
+    Flask is a Python web framework that supports
+    routes, templates, and web requests.
+    I plan to use Flask for the backend.
+  </p>
+  <p>
+    <a href="https://flask.palletsprojects.com/en/stable/"
+       target="_blank" rel="noopener noreferrer">
+      Official Flask Documentation
+    </a>
+  </p>
 
-      <p>
-        Source:
-        <a href="https://flask.palletsprojects.com/en/stable/"
-           target="_blank" rel="noopener noreferrer">
-          Official Flask Documentation
-        </a>
-      </p>
+  <h3>SQLite</h3>
+  <p>
+    SQLite is a database engine that can store
+    user accounts, clothing items, and saved outfits.
+    It does not require a separate database server.
+  </p>
+  <p>
+    <a href="https://www.sqlite.org/docs.html"
+       target="_blank" rel="noopener noreferrer">
+      Official SQLite Documentation
+    </a>
+  </p>
 
-      <h3>SQLite</h3>
-      <p>
-        SQLite is a database engine that can store
-        user accounts, clothing items, and outfits.
-        I chose it because it is suitable for
-        a small project without needing a separate
-        database server.
-      </p>
+  <h3>pytest</h3>
+  <p>
+    pytest is a Python testing framework.
+    I plan to use it to test my application's
+    features and security.
+  </p>
+  <p>
+    <a href="https://docs.pytest.org/en/stable/"
+       target="_blank" rel="noopener noreferrer">
+      Official pytest Documentation
+    </a>
+  </p>
 
-      <p>
-        Source:
-        <a href="https://www.sqlite.org/docs.html"
-           target="_blank" rel="noopener noreferrer">
-          Official SQLite Documentation
-        </a>
-      </p>
+  <p>
+    <strong>Source verification:</strong>
+    Checked November 12, 2026.
+    Official documentation was reviewed for
+    basic features and intended purposes.
+    Application tests have not been completed.
+  </p>
+</section>
 
-      <h3>pytest</h3>
-      <p>
-        pytest is a Python testing framework.
-        I plan to use it to test my application's
-        features and security.
-      </p>
+<section>
+  <h2>Planned Features</h2>
+  <ol>
+    <li>Create an account and log in securely.</li>
+    <li>Add and organize clothing items.</li>
+    <li>Create outfits from saved clothing.</li>
+    <li>Save outfits and view private history.</li>
+    <li>Update account information.</li>
+  </ol>
+</section>
 
-      <p>
-        Source:
-        <a href="https://docs.pytest.org/en/stable/"
-           target="_blank" rel="noopener noreferrer">
-          Official pytest Documentation
-        </a>
-      </p>
+<section>
+  <h2>Five User Stories</h2>
+  <ol>
+    <li>
+      As a user, I want to create an account
+      so my wardrobe stays private.
+    </li>
+    <li>
+      As a user, I want to add clothing items
+      so I can organize what I own.
+    </li>
+    <li>
+      As a user, I want to combine clothing items
+      so I can create outfits.
+    </li>
+    <li>
+      As a user, I want to save outfits
+      so I can view them again later.
+    </li>
+    <li>
+      As a user, I want to update my account
+      information so I can manage my profile.
+    </li>
+  </ol>
+</section>
 
-      <p>
-        <strong>Source verification:</strong>
-        Checked November 12, 2026.
-        I reviewed the official Flask, SQLite, and
-        pytest documentation to confirm their
-        basic features and intended purposes.
-        Application testing has not been completed yet.
-      </p>
-    </section>
+<section>
+  <h2>Application Architecture</h2>
 
-    <section>
-      <h2>Planned Features</h2>
-      <ol>
-        <li>Create an account and log in securely.</li>
-        <li>Add and organize clothing items.</li>
-        <li>Create outfits from saved clothing.</li>
-        <li>Save outfits and view private history.</li>
-        <li>Update account information.</li>
-      </ol>
-    </section>
+  <p><strong>Frontend:</strong> HTML and CSS</p>
+  <p><strong>Backend:</strong> Python and Flask</p>
+  <p><strong>Database:</strong> SQLite</p>
 
-    <section>
-      <h2>Five User Stories</h2>
-      <ol>
-        <li>
-          As a user, I want to create an account
-          so my wardrobe stays private.
-        </li>
-        <li>
-          As a user, I want to add clothing items
-          so I can organize what I own.
-        </li>
-        <li>
-          As a user, I want to combine clothing
-          items so I can create outfits.
-        </li>
-        <li>
-          As a user, I want to save outfits
-          so I can view them again later.
-        </li>
-        <li>
-          As a user, I want to update my account
-          information so I can manage my profile.
-        </li>
-      </ol>
-    </section>
-
-    <section>
-      <h2>Application Architecture</h2>
-
-      <p><strong>Frontend:</strong> HTML and CSS</p>
-      <p><strong>Backend:</strong> Python and Flask</p>
-      <p><strong>Database:</strong> SQLite</p>
-
-      <pre>
+  <pre>
 Browser (HTML/CSS)
         |
         v
@@ -265,174 +316,206 @@ SQLite Database
         |
         v
 Users, Clothing, Outfits
-      </pre>
+  </pre>
 
-      <p>
-        The browser displays the interface.
-        Flask handles authentication and
-        application logic. SQLite stores
-        account information, clothing items,
-        and saved outfits.
-      </p>
-    </section>
+  <p>
+    The browser displays the interface.
+    Flask handles authentication and application logic.
+    SQLite stores account information, clothing items,
+    and saved outfits.
+  </p>
+</section>
 
-    <section>
-      <h2>Facts, Interpretations, and Assumptions</h2>
+<section>
+  <h2>Facts, Interpretations, and Assumptions</h2>
 
-      <h3>Facts to Verify</h3>
-      <p>
-        Flask provides routing and template
-        functionality. SQLite supports persistent
-        database storage. pytest supports
-        automated Python tests.
-      </p>
+  <h3>Facts</h3>
+  <p>
+    Flask supports routing and templates.
+    SQLite supports persistent data storage.
+    pytest supports automated Python tests.
+  </p>
 
-      <h3>My Interpretation</h3>
-      <p>
-        Flask and SQLite appear to be a good
-        combination for a small web application
-        because they allow me to focus on
-        learning the application logic.
-      </p>
+  <h3>My Interpretation</h3>
+  <p>
+    Flask and SQLite appear to be a good combination
+    for a small web application because they let
+    me focus on learning application logic.
+  </p>
 
-      <h3>My Assumption</h3>
-      <p>
-        I think users may prefer seeing clothing
-        items in a visual grid rather than
-        browsing a text-based category list.
-        This has not been tested yet.
-      </p>
-    </section>
+  <h3>My Assumption</h3>
+  <p>
+    I think users may prefer seeing clothing items
+    in a visual grid rather than a text-based list.
+    This has not been tested with a working prototype.
+  </p>
+</section>
 
-    <section>
-      <h2>Creative Experiment</h2>
+<section>
+  <h2>Creative Experiment</h2>
 
-      <h3>Visual Grid vs. Category List</h3>
+  <h3>Visual Grid vs. Category List</h3>
+  <p>
+    I want to compare two ways of displaying
+    clothing items.
+  </p>
 
-      <p>
-        I want to compare two different ways
-        of displaying clothing items.
-      </p>
+  <p><strong>Approach A:</strong> Visual clothing grid</p>
+  <p><strong>Approach B:</strong> Category-based list</p>
 
-      <p>
-        <strong>Approach A:</strong>
-        A visual grid showing all clothing items.
-      </p>
+  <h3>Example Visual Grid</h3>
+  <p>
+    This is a simple visual concept, not a working
+    application feature.
+  </p>
 
-      <p>
-        <strong>Approach B:</strong>
-        A category-based list separating tops,
-        bottoms, shoes, and accessories.
-      </p>
+  <div class="outfit-grid">
+    <div class="outfit-card">
+      <div class="emoji">👚</div>
+      <strong>Tops</strong>
+      <p>Shirts & Sweaters</p>
+    </div>
 
-      <p>
-        I will ask a classmate to try both
-        approaches and explain which one
-        is easier to use.
-      </p>
+    <div class="outfit-card">
+      <div class="emoji">👖</div>
+      <strong>Bottoms</strong>
+      <p>Jeans & Pants</p>
+    </div>
 
-      <p><strong>Status:</strong> Planned, not tested.</p>
-    </section>
+    <div class="outfit-card">
+      <div class="emoji">👟</div>
+      <strong>Shoes</strong>
+      <p>Sneakers & More</p>
+    </div>
+  </div>
 
-    <section>
-      <h2>Security and Testing</h2>
+  <p>
+    I plan to compare both layouts and ask
+    users which one is easier to navigate.
+  </p>
 
-      <p>
-        I plan to use secure password hashing,
-        protected routes, input validation,
-        and database ownership checks.
-      </p>
+  <p><strong>Status:</strong> Experiment planned.</p>
+</section>
 
-      <h3>Planned Tests</h3>
-      <ul>
-        <li>User registration and login</li>
-        <li>Invalid login attempts</li>
-        <li>Adding clothing items</li>
-        <li>Saving and retrieving outfits</li>
-        <li>Private account access</li>
-        <li>Updating account information</li>
-      </ul>
+<section>
+  <h2>Security and Testing</h2>
+  <p>
+    I plan to use password hashing, protected
+    routes, input validation, and database
+    ownership checks.
+  </p>
 
-      <p>
-        <strong>Status:</strong>
-        Planned. No implementation tests
-        have been run yet.
-      </p>
-    </section>
+  <h3>Planned Tests</h3>
+  <ul>
+    <li>User registration and login</li>
+    <li>Invalid login attempts</li>
+    <li>Adding clothing items</li>
+    <li>Saving and retrieving outfits</li>
+    <li>Private account access</li>
+    <li>Updating account information</li>
+  </ul>
 
-    <section>
-      <h2>AI Assistance</h2>
+  <p>
+    <strong>Status:</strong>
+    Planned. Application tests have not been run.
+  </p>
+</section>
 
-      <p>
-        I used ChatGPT to help compare approaches,
-        and draft this research website.
-      </p>
+<section>
+  <h2>AI Assistance</h2>
+  <p>
+    I used ChatGPT to help compare project ideas,
+    and draft this research website.
+  </p>
+  <p>
+    I will verify technical recommendations using
+    official documentation and future code tests.
+  </p>
+</section>
 
-      <p>
-        AI suggestions are not automatically
-        treated as verified facts. I plan to
-        check technical claims using official
-        documentation and test my code myself.
-      </p>
-    </section>
+<section>
+  <h2>Peer Review Feedback</h2>
 
-    <section>
-      <h2>Peer Review Plan</h2>
+  <p>
+    My reviewer said my website was well-organized
+    and thorough, but the design looked a little bland.
+  </p>
 
-      <p>
-        I will ask a classmate to review
-        this website and provide feedback.
-      </p>
+  <p>
+    They also agreed that a visual clothing grid
+    would be helpful and thought it was a good idea.
+  </p>
 
-      <ol>
-        <li>Open one of my research sources.</li>
-        <li>Explain why I chose Flask and SQLite.</li>
-        <li>Identify one confusing part or assumption.</li>
-      </ol>
+  <h3>My Decision</h3>
+  <p>
+    I decided to improve the website's visual design
+    using a minimal beige and cream aesthetic.
+  </p>
 
-      <p>
-        I will record the feedback in a GitHub
-        issue and decide whether to implement,
-        investigate, defer, or decline it.
-      </p>
+  <p>
+    I also added a simple clothing grid example
+    to help explain my planned application.
+  </p>
 
-      <p>
-        <strong>Status:</strong>
-        Awaiting real peer review.
-      </p>
-    </section>
+  <h3>Verification</h3>
+  <p>
+    <strong>Observed:</strong>
+    Received feedback from a real reviewer.
+  </p>
+  <p>
+    <strong>Planned:</strong>
+    Ask the reviewer to check the updated website.
+  </p>
+  <p>
+    <strong>Not yet confirmed:</strong>
+    Reviewer source-opening and technology-choice checks.
+  </p>
 
-    <section>
-      <h2>Project Links</h2>
+  <p>
+    <a href="https://github.com/jec87/is218-digital-closet/issues/1">
+      GitHub Peer Review Issue #1
+    </a>
+  </p>
+</section>
 
-      <p>
-        <a href="https://github.com/jec87/is218-digital-closet">
-          Digital Closet GitHub Repository
-        </a>
-      </p>
+<section>
+  <h2>Project Links</h2>
 
-      <p>
-        Career Research Site:
-        Link to be added when available.
-      </p>
-    </section>
+  <p>
+    <a href="https://github.com/jec87/is218-digital-closet">
+      Digital Closet GitHub Repository
+    </a>
+  </p>
 
-    <section>
-      <h2>Next Steps</h2>
-      <ol>
-        <li>Verify technical research sources.</li>
-        <li>Publish this website with GitHub Pages.</li>
-        <li>Collect feedback from a classmate.</li>
-        <li>Document feedback in GitHub issues.</li>
-        <li>Begin building the application later.</li>
-      </ol>
-    </section>
+  <p>
+    <a href="https://github.com/jec87/is218-digital-closet/issues/1">
+      Peer Review Issue
+    </a>
+  </p>
 
-  </main>
+  <p>
+    Career Research Site:
+    Link to be added when available.
+  </p>
+</section>
 
-  <footer>
-    <p>My Digital Closet | IS218-003 | 2026</p>
-  </footer>
+<section>
+  <h2>Next Steps</h2>
+  <ol>
+    <li>Finish remaining peer-review checks.</li>
+    <li>Verify the updated website in a browser.</li>
+    <li>Ask my reviewer to retry the updated design.</li>
+    <li>Build the first Digital Closet prototype.</li>
+    <li>Test the visual grid against a category list.</li>
+  </ol>
+</section>
+
+</main>
+
+<footer>
+  <p>My Digital Closet | IS218-003 | 2026</p>
+</footer>
 
 </body>
 </html>
+
