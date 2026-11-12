@@ -108,7 +108,28 @@ The application has not been implemented yet.
 
 ## Research Site
 
-Coming soon.
+
+## Research Site
+
+My Digital Closet Development Research Website:
+
+https://jec87.github.io/is218-digital-closet/
+
+This website documents my programming research,
+technology choices, project comparison,
+architecture, and planned creative experiment.
+
+## Peer Review
+
+GitHub Issue #1:
+https://github.com/jec87/is218-digital-closet/issues/1
+
+My reviewer said the website was organized
+and thorough. They also agreed that a visual
+clothing grid would be useful.
+
+I plan to test the visual grid against a
+category-based layout during development.
 
 ## Career Research Site
 
